@@ -1,0 +1,27 @@
+{
+	"manifest_version"	: 2,
+	"name"				: "Rdio Play All",
+	"version"			: "1.0",
+
+	"description"		: "Chain plays all top songs for any given artist.",
+
+	"icons" :
+	{
+		 "48"			: "icon48.png",
+		"128"			: "icon128.png"
+	},
+
+	"author" :
+	{
+		"name"			: "David Krutsko",
+		"email"			: "dave@krutsko.net",
+		"url"			: "dave.krutsko.net"
+	},
+
+	"content_scripts" :
+	[{
+		"js"			: [ "play-all.js" ],
+		"matches"		: [ "*://www.rdio.com/*" ],
+		"run_at"		: "document_end"
+	}]
+}
