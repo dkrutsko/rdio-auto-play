@@ -17,6 +17,9 @@
 
 (function()
 {
+	// Check for JQuery
+	if (!jQuery) return;
+
 	// We only support lists from an artists top-songs section
 	var regex = /.*:\/\/www\.rdio\.com\/artist\/.*\/songs\/?/i;
 
@@ -70,11 +73,9 @@
 
 	var handlePrev = function()
 	{
-		if (active > 0 && toSeconds
-			(time[0].innerHTML) < 3)
-		{
+		if (active > 0 &&
+			toSeconds (time.html()) < 3)
 			list[--active].click();
-		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -93,15 +94,7 @@
 
 	var handleList = function()
 	{
-		active = -1;
-
-		// Find the new selected active song
-		for (var i = 0; i < list.length; ++i)
-		{
-			if (list[i] === this) {
-				active = i; break;
-			}
-		}
+		active = list.index (this);
 	}
 
 	////////////////////////////////////////////////////////////////////////////////
@@ -110,33 +103,29 @@
 	{
 		if (isValid())
 		{
-			// Unbind any previously bound UI elements
-			prev[0].removeEventListener ("click", handlePrev);
-			next[0].removeEventListener ("click", handleNext);
-
-			for (var i = 0; i < list.length; ++i)
-				list[i].removeEventListener ("click", handleList);
+			// Unbind previously bound elements
+			prev.unbind ("click", handlePrev);
+			next.unbind ("click", handleNext);
+			list.unbind ("click", handleList);
 		}
 
 		// Verify supported URL
 		if (url.match (regex))
 		{
-			prev = document.querySelectorAll (prevPath);
-			next = document.querySelectorAll (nextPath);
-			play = document.querySelectorAll (playPath);
+			prev = $(prevPath);
+			next = $(nextPath);
+			play = $(playPath);
 
-			time = document.querySelectorAll (timePath);
-			span = document.querySelectorAll (spanPath);
+			time = $(timePath);
+			span = $(spanPath);
 
-			list = document.querySelectorAll (listPath);
+			list = $(listPath);
 
 			if (isValid())
 			{
-				prev[0].addEventListener ("click", handlePrev);
-				next[0].addEventListener ("click", handleNext);
-
-				for (var i = 0; i < list.length; ++i)
-					list[i].addEventListener ("click", handleList);
+				prev.bind ("click", handlePrev);
+				next.bind ("click", handleNext);
+				list.bind ("click", handleList);
 			}
 		}
 	}
@@ -154,24 +143,23 @@
 
 		else if (isValid())
 		{
-			// Check whether more items have been added
-			if (document.querySelectorAll (listPath).
-				length !== list.length) bindElements();
+			// Check if more items have been added
+			if (list.length !== $(listPath).length)
+				bindElements();
 
 			if (active >= 0)
 			{
-				// Check whether or not to go to next track
-				var timeVal = toSeconds (time[0].innerHTML);
-				var spanVal = toSeconds (span[0].innerHTML);
+				// Check whether to go to next track
+				var timeVal = toSeconds (time.html());
+				var spanVal = toSeconds (span.html());
 
 				if (spanVal > 0)
 					spanVal = timeVal - spanVal;
 
-				if (spanVal > -2)
+				if (spanVal > -3)
 					handleNext();
 			}
 		}
 
 	}, 200);
-
 }());
