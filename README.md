@@ -1,2 +1,2 @@
-# Rdio Play All
+# Rdio Auto Play
 

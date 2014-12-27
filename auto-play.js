@@ -10,15 +10,19 @@
 "use strict";
 
 //----------------------------------------------------------------------------//
-// Extension                                                                  //
+// Bookmark                                                                   //
 //----------------------------------------------------------------------------//
 
 ////////////////////////////////////////////////////////////////////////////////
 
 (function()
 {
-	// Check for JQuery
-	if (!jQuery) return;
+	if (!jQuery ||
+		// Check if we've already loaded
+		window["rdio-auto-play"]) return;
+
+	// Declare that we have loaded
+	window["rdio-auto-play"] = true;
 
 	// We only support lists from an artists top-songs section
 	var regex = /.*:\/\/www\.rdio\.com\/artist\/.*\/songs\/?/i;
