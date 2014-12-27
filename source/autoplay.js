@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------------- //
 //                                                                            //
 //                        (C) 2014-2015  David Krutsko                        //
-//                        See LICENSE.md for copyright                        //
+//                        See LICENSE.md for licensing                        //
 //                                                                            //
 // -------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
@@ -19,10 +19,10 @@
 {
 	if (!jQuery ||
 		// Check if we've already loaded
-		window["rdio-auto-play"]) return;
+		window["rdio-autoplay"]) return;
 
 	// Declare that we have loaded
-	window["rdio-auto-play"] = true;
+	window["rdio-autoplay"] = true;
 
 	// We only support lists from an artists top-songs section
 	var regex = /.*:\/\/www\.rdio\.com\/artist\/.*\/songs\/?/i;
@@ -143,6 +143,9 @@
 		{
 			url = window.location.href;
 			bindElements(); active = -1;
+
+			// Ensure songs have loaded
+			url = isValid() ? url : "";
 		}
 
 		else if (isValid())
@@ -164,6 +167,5 @@
 					handleNext();
 			}
 		}
-
 	}, 200);
 }());

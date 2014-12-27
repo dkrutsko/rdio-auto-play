@@ -2,7 +2,7 @@
 // -------------------------------------------------------------------------- //
 //                                                                            //
 //                        (C) 2014-2015  David Krutsko                        //
-//                        See LICENSE.md for copyright                        //
+//                        See LICENSE.md for licensing                        //
 //                                                                            //
 // -------------------------------------------------------------------------- //
 ////////////////////////////////////////////////////////////////////////////////
@@ -15,12 +15,12 @@
 
 (function()
 {
-	if (!jQuery || window["rdio-auto-play"]) return;
+	if (!jQuery || window["rdio-autoplay"]) return;
 	var script = document.createElement ("script");
 
 	script.async = true;
 	script.src = "//dkrutsko.github.io/" +
-			"rdio-auto-play/auto-play.js";
+		"rdio-autoplay/source/autoplay.js";
 
 	document.documentElement.appendChild (script);
 

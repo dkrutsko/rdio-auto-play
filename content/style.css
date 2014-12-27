@@ -1,0 +1,307 @@
+/*//////////////////////////////////////////////////////////////////////////////
+// -------------------------------------------------------------------------- //
+//                                                                            //
+//                        (C) 2014-2015  David Krutsko                        //
+//                        See LICENSE.md for licensing                        //
+//                                                                            //
+// -------------------------------------------------------------------------- //
+//////////////////////////////////////////////////////////////////////////////*/
+
+/*----------------------------------------------------------------------------*/
+/* Base                                                                       */
+/*----------------------------------------------------------------------------*/
+
+html
+{
+	 width: 100%;
+	height: 100%;
+	font-family: "Open Sans", Arial, sans-serif;
+}
+
+body
+{
+	 width: 100%;
+	height: 100%;
+	background: #EBEBEB;
+}
+
+#body
+{
+	 width: 100%;
+	height: auto;
+	position:  relative;
+	left: 0px; top: 0px;
+	min-height: 100%;
+}
+
+#back
+{
+	 width:  50%;
+	height: 100%;
+	position: fixed;
+	top: 0; left: 0;
+	background: #F0F0F0;
+}
+
+::-moz-selection
+{
+	     color: #F0F0F0;
+	background: #B4B4B4;
+	text-shadow: none;
+}
+
+::selection
+{
+	     color: #F0F0F0;
+	background: #B4B4B4;
+	text-shadow: none;
+}
+
+.clearfix
+{
+	zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after
+{
+	content: "";
+	display: table;
+}
+
+.clearfix:after
+{
+	clear: both;
+}
+
+a
+{
+	color: #505050;
+	outline: none;
+	text-decoration: underline;
+}
+
+a:visited
+{
+	color: #505050;
+	outline: none;
+}
+
+a:hover
+{
+	outline: none;
+	text-decoration: none;
+}
+a:focus, a:active
+{
+	outline: none;
+}
+
+.container
+{
+	width: 820px;
+	position:  relative;
+	left: 0px; top: 0px;
+
+	 margin:  0px auto  0px auto;
+	padding: 20px 80px 20px 80px;
+}
+
+#fork-me
+{
+	position: fixed;
+	top: 0; left: 0;
+}
+
+#fork-me img
+{
+	 width: 160px;
+	height: 160px;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Fonts                                                                      */
+/*----------------------------------------------------------------------------*/
+
+@font-face
+{
+	font-family: "Open Sans";
+	font-weight: 400;
+	font-style: normal;
+	src: url("/content/open-sans-400.woff") format("woff");
+}
+
+@font-face
+{
+	font-family: "Open Sans";
+	font-weight: 600;
+	font-style: normal;
+	src: url("/content/open-sans-600.woff") format("woff");
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Content                                                                    */
+/*----------------------------------------------------------------------------*/
+
+#content .logo
+{
+	 width: 240px;
+	height: 240px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 10px;
+}
+
+#content .text
+{
+	 width: 360px;
+	height:  90px;
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 20px;
+}
+
+#content h1
+{
+	  font-size: 34px;
+	font-weight: 600;
+	line-height: 38px;
+
+	 margin: 30px 0px 15px 0px;
+	padding:  0px 0px  0px 0px;
+	color: #505050;
+}
+
+#content p
+{
+	  font-size: 18px;
+	font-weight: 400;
+	line-height: 26px;
+	text-align: justify;
+
+	 margin: 0px 0px 15px 0px;
+	padding: 0px 0px  0px 0px;
+	color: #505050;
+}
+
+#content p b
+{
+	font-weight: 600;
+}
+
+#content pre
+{
+	 margin:  0px;
+	padding: 20px;
+	color: #282828;
+
+	word-wrap: break-word;
+	border-radius: 12px;
+	background: #DCDCDC;
+}
+
+#content .button
+{
+	text-align: center;
+	margin: 40px 0px 30px 0px;
+}
+
+#content .button a
+{
+	display: inline-block;
+	 margin:  0px  0px 12px  0px;
+	padding: 16px 46px 12px 46px;
+
+	border-radius: 12px;
+	border: 3px solid #787878;
+	background-color: #D2D2D2;
+
+	  font-size: 0;
+	line-height: 0;
+	color: transparent;
+}
+
+#content .button a:hover
+{
+	background-color: #D7D7D7;
+}
+
+#content .button svg
+{
+	 width: 160px;
+	height:  40px;
+}
+
+#content .button em
+{
+	  font-size: 14px;
+	font-weight: 400;
+	line-height: 14px;
+	color: #8C8C8C;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Footer                                                                     */
+/*----------------------------------------------------------------------------*/
+
+#footer-pad
+{
+	padding: 44px;
+}
+
+#footer
+{
+	 width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0; bottom: 0;
+	background: #282828;
+}
+
+#footer .author
+{
+	text-align: left;
+	float: left;
+}
+
+#footer .github
+{
+	 margin-top: 15px;
+	 text-align: right;
+	float: right;
+}
+
+#footer p
+{
+	  font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+
+	 margin: 0px;
+	padding: 0px;
+	color: #E1E1E1;
+}
+
+#footer a
+{
+	color: #D7D7D7;
+	text-decoration: none;
+}
+
+#footer a:hover
+{
+	color: #B9B9B9;
+}
+
+#footer svg
+{
+	 width: 104px;
+	height:  32px;
+	vertical-align: bottom;
+}
