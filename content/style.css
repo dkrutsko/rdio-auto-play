@@ -130,7 +130,7 @@ a:focus, a:active
 	font-family: "Open Sans";
 	font-weight: 400;
 	font-style: normal;
-	src: url("/content/open-sans-400.woff") format("woff");
+	src: url("content/open-sans-400.woff") format("woff");
 }
 
 @font-face
@@ -138,7 +138,7 @@ a:focus, a:active
 	font-family: "Open Sans";
 	font-weight: 600;
 	font-style: normal;
-	src: url("/content/open-sans-600.woff") format("woff");
+	src: url("content/open-sans-600.woff") format("woff");
 }
 
 
